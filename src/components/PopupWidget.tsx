@@ -24,7 +24,8 @@ export function PopupWidget() {
 
   const userName = useWatch({ control, name: "name", defaultValue: "Someone" });
 
-  const onSubmit = async (data: any, e: any) => {
+  // TODO: Replace [COMPANY_NAME] in the subject/from_name hidden fields below
+  const onSubmit = async (data: Record<string, unknown>, e?: React.BaseSyntheticEvent) => {
     console.log(data);
     await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -39,7 +40,7 @@ export function PopupWidget() {
         if (json.success) {
           setIsSuccess(true);
           setMessage(json.message);
-          e.target.reset();
+          (e?.target as HTMLFormElement | undefined)?.reset();
           reset();
         } else {
           setIsSuccess(false);
@@ -119,14 +120,16 @@ export function PopupWidget() {
             >
               <DisclosurePanel className=" flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-gray-300 dark:border-gray-800 bg-white shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]">
                 <div className="flex flex-col items-center justify-center h-32 p-5 bg-indigo-600">
-                  <h3 className="text-lg text-white">How can we help?</h3>
+                  {/* TODO: Replace with your popup headline and subheadline */}
+                  <h3 className="text-lg text-white">[POPUP_HEADLINE]</h3>
                   <p className="text-white opacity-50">
-                    We usually respond in a few hours
+                    [POPUP_SUBHEADLINE]
                   </p>
                 </div>
                 <div className="flex-grow h-full p-6 overflow-auto bg-gray-50 ">
                   {!isSubmitSuccessful && (
                     <form onSubmit={handleSubmit(onSubmit)} noValidate>
+                      {/* TODO: Replace YOUR_ACCESS_KEY_HERE with your Web3Forms API key from https://web3forms.com */}
                       <input
                         type="hidden"
                         value="YOUR_ACCESS_KEY_HERE"
@@ -134,12 +137,12 @@ export function PopupWidget() {
                       />
                       <input
                         type="hidden"
-                        value={`${userName} sent a message from Nextly`}
+                        value={`${userName} sent a message from [COMPANY_NAME]`}
                         {...register("subject")}
                       />
                       <input
                         type="hidden"
-                        value="Nextly Template"
+                        value="[COMPANY_NAME]"
                         {...register("from_name")}
                       />
                       <input

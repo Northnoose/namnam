@@ -2,20 +2,23 @@ import Image from "next/image";
 import React from "react";
 import { Container }  from "@/components/Container";
 
+interface BulletItem {
+  title: string;
+  desc: string;
+  icon: React.ReactNode;
+}
+
 interface BenefitsProps {
   imgPos?: "left" | "right";
   data: {
     imgPos?: "left" | "right";
     title: string;
     desc: string;
-    image: any;
-    bullets: {
-      title: string;
-      desc: string;
-      icon: React.ReactNode;
-    }[];
+    image: string;
+    bullets: BulletItem[];
   };
 }
+
 export const Benefits = (props: Readonly<BenefitsProps>) => {
   const { data } = props;
   return (
@@ -31,8 +34,6 @@ export const Benefits = (props: Readonly<BenefitsProps>) => {
               height={521}
               alt="Benefits"
               className={"object-cover"}
-              placeholder="blur"
-              blurDataURL={data.image.src}
             />
           </div>
         </div>
@@ -65,11 +66,17 @@ export const Benefits = (props: Readonly<BenefitsProps>) => {
   );
 };
 
-function Benefit(props: any) {
+interface BenefitItemProps {
+  title: string;
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}
+
+function Benefit(props: Readonly<BenefitItemProps>) {
   return (
       <div className="flex items-start mt-8 space-x-3">
         <div className="flex items-center justify-center flex-shrink-0 mt-1 bg-indigo-500 rounded-md w-11 h-11 ">
-          {React.cloneElement(props.icon, {
+          {React.cloneElement(props.icon as React.ReactElement, {
             className: "w-7 h-7 text-indigo-50",
           })}
         </div>

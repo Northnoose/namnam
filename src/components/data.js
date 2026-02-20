@@ -7,50 +7,50 @@ import {
   SunIcon,
 } from "@heroicons/react/24/solid";
 
-import benefitOneImg from "../../public/img/benefit-one.png";
-import benefitTwoImg from "../../public/img/benefit-two.png";
+// TODO: Replace placeholder image URLs with your actual benefit section images (521x521)
+// TODO: Replace all [PLACEHOLDER] tokens with your actual content
 
 const benefitOne = {
-  title: "Highlight your benefits",
-  desc: "You can use this space to highlight your first benefit or a feature of your product. It can also contain an image or Illustration like in the example along with some bullet points.",
-  image: benefitOneImg,
+  title: "[BENEFIT_SECTION_1_TITLE]",
+  desc: "[BENEFIT_SECTION_1_DESCRIPTION]",
+  image: "https://placehold.co/521x521",
   bullets: [
     {
-      title: "Understand your customers",
-      desc: "Then explain the first point breifly in one or two lines.",
+      title: "[FEATURE_TITLE_1]",
+      desc: "[FEATURE_DESCRIPTION_1]",
       icon: <FaceSmileIcon />,
     },
     {
-      title: "Improve acquisition",
-      desc: "Here you can add the next benefit point.",
+      title: "[FEATURE_TITLE_2]",
+      desc: "[FEATURE_DESCRIPTION_2]",
       icon: <ChartBarSquareIcon />,
     },
     {
-      title: "Drive customer retention",
-      desc: "This will be your last bullet point in this section.",
+      title: "[FEATURE_TITLE_3]",
+      desc: "[FEATURE_DESCRIPTION_3]",
       icon: <CursorArrowRaysIcon />,
     },
   ],
 };
 
 const benefitTwo = {
-  title: "Offer more benefits here",
-  desc: "You can use this same layout with a flip image to highlight your rest of the benefits of your product. It can also contain an image or Illustration as above section along with some bullet points.",
-  image: benefitTwoImg,
+  title: "[BENEFIT_SECTION_2_TITLE]",
+  desc: "[BENEFIT_SECTION_2_DESCRIPTION]",
+  image: "https://placehold.co/521x521",
   bullets: [
     {
-      title: "Mobile Responsive Template",
-      desc: "Nextly is designed as a mobile first responsive template.",
+      title: "[FEATURE_TITLE_4]",
+      desc: "[FEATURE_DESCRIPTION_4]",
       icon: <DevicePhoneMobileIcon />,
     },
     {
-      title: "Powered by Next.js & TailwindCSS",
-      desc: "This template is powered by latest technologies and tools.",
+      title: "[FEATURE_TITLE_5]",
+      desc: "[FEATURE_DESCRIPTION_5]",
       icon: <AdjustmentsHorizontalIcon />,
     },
     {
-      title: "Dark & Light Mode",
-      desc: "Nextly comes with a zero-config light & dark mode. ",
+      title: "[FEATURE_TITLE_6]",
+      desc: "[FEATURE_DESCRIPTION_6]",
       icon: <SunIcon />,
     },
   ],
