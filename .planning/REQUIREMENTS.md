@@ -112,24 +112,64 @@
 
 ## Traceability
 
-*(Fylles ut av roadmapper)*
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01–05 | Phase 1 | Pending |
-| NAV-01–05 | Phase 2 | Pending |
-| HERO-01–06 | Phase 3 | Pending |
-| OM-01–05 | Phase 3 | Pending |
-| MENU-01–13 | Phase 3 | Pending |
-| LEV-01–05 | Phase 3 | Pending |
-| FOOT-01–06 | Phase 3 | Pending |
-| SEO-01–05 | Phase 4 | Pending |
+| FOUND-01 | Phase 1 | Pending |
+| FOUND-02 | Phase 1 | Pending |
+| FOUND-03 | Phase 1 | Pending |
+| FOUND-04 | Phase 1 | Pending |
+| FOUND-05 | Phase 1 | Pending |
+| NAV-01 | Phase 2 | Pending |
+| NAV-02 | Phase 2 | Pending |
+| NAV-03 | Phase 2 | Pending |
+| NAV-04 | Phase 2 | Pending |
+| NAV-05 | Phase 2 | Pending |
+| HERO-01 | Phase 3 | Pending |
+| HERO-02 | Phase 3 | Pending |
+| HERO-03 | Phase 3 | Pending |
+| HERO-04 | Phase 3 | Pending |
+| HERO-05 | Phase 3 | Pending |
+| HERO-06 | Phase 3 | Pending |
+| OM-01 | Phase 3 | Pending |
+| OM-02 | Phase 3 | Pending |
+| OM-03 | Phase 3 | Pending |
+| OM-04 | Phase 3 | Pending |
+| OM-05 | Phase 3 | Pending |
+| MENU-01 | Phase 3 | Pending |
+| MENU-02 | Phase 3 | Pending |
+| MENU-03 | Phase 3 | Pending |
+| MENU-04 | Phase 3 | Pending |
+| MENU-05 | Phase 3 | Pending |
+| MENU-06 | Phase 3 | Pending |
+| MENU-07 | Phase 3 | Pending |
+| MENU-08 | Phase 3 | Pending |
+| MENU-09 | Phase 3 | Pending |
+| MENU-10 | Phase 3 | Pending |
+| MENU-11 | Phase 3 | Pending |
+| MENU-12 | Phase 3 | Pending |
+| MENU-13 | Phase 3 | Pending |
+| LEV-01 | Phase 3 | Pending |
+| LEV-02 | Phase 3 | Pending |
+| LEV-03 | Phase 3 | Pending |
+| LEV-04 | Phase 3 | Pending |
+| LEV-05 | Phase 3 | Pending |
+| FOOT-01 | Phase 3 | Pending |
+| FOOT-02 | Phase 3 | Pending |
+| FOOT-03 | Phase 3 | Pending |
+| FOOT-04 | Phase 3 | Pending |
+| FOOT-05 | Phase 3 | Pending |
+| FOOT-06 | Phase 3 | Pending |
+| SEO-01 | Phase 4 | Pending |
+| SEO-02 | Phase 4 | Pending |
+| SEO-03 | Phase 4 | Pending |
+| SEO-04 | Phase 4 | Pending |
+| SEO-05 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 47 total
 - Mapped to phases: 47
-- Unmapped: 0 ✓
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-23*
-*Last updated: 2026-02-23 after initial definition*
+*Last updated: 2026-02-23 after roadmap creation*
