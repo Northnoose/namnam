@@ -14,8 +14,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Fix dark-theme flash, set Norwegian language, establish typed menu data structure
 - [x] **Phase 2: Navigation Shell** - Sticky navbar, sticky call bar, smooth scroll with correct anchor offsets
-- [ ] **Phase 3: Content Sections** - Hero, Om oss, Menu (5 categories), Levering, Footer — the full page
-- [ ] **Phase 4: SEO and Meta** - Title, description, Open Graph, favicon, LocalBusiness JSON-LD schema
+- [x] **Phase 3: Content Sections** - Hero, Om oss, Menu (5 categories), Levering, Footer — the full page
+- [x] **Phase 4: SEO and Meta** - Title, description, Open Graph, favicon, LocalBusiness JSON-LD schema
 
 ## Phase Details
 
@@ -85,9 +85,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Add metadata export (title, description, Open Graph) and JSON-LD script to layout.tsx
-- [ ] 04-02-PLAN.md — Create src/app/icon.tsx and apple-icon.tsx for file-based favicon generation
-- [ ] 04-03-PLAN.md — Human visual verification of all Phase 4 SEO requirements
+- [x] 04-01-PLAN.md — Add metadata export (title, description, Open Graph) and JSON-LD script to layout.tsx
+- [x] 04-02-PLAN.md — Create src/app/icon.tsx and apple-icon.tsx for file-based favicon generation
+- [x] 04-03-PLAN.md — Human visual verification of all Phase 4 SEO requirements
 
 ## Progress
 
@@ -98,5 +98,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete | 2026-02-24 |
 | 2. Navigation Shell | 3/3 | Complete | 2026-02-24 |
-| 3. Content Sections | 6/7 | In Progress|  |
-| 4. SEO and Meta | 2/3 | In Progress|  |
+| 3. Content Sections | 6/7 | Complete | 2026-02-24 |
+| 4. SEO and Meta | 3/3 | Complete   | 2026-02-24 |
