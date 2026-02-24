@@ -66,12 +66,12 @@
 
 ### Footer / Kontakt
 
-- [ ] **FOOT-01**: Footer viser adresse: Strandgata 11, 3340 Åmot
-- [ ] **FOOT-02**: Telefonnummer er klikkbar `tel:+4741232219`-lenke
-- [ ] **FOOT-03**: Åpningstider vises: Alle dager 13:00–23:00
-- [ ] **FOOT-04**: Facebook-lenke til `facebook.com/NumNumPizzaGrill`
-- [ ] **FOOT-05**: Tekst: "Langs Riksvei 287 – Parkering utenfor!"
-- [ ] **FOOT-06**: Copyright-linje med restaurantens navn
+- [x] **FOOT-01**: Footer viser adresse: Strandgata 11, 3340 Åmot
+- [x] **FOOT-02**: Telefonnummer er klikkbar `tel:+4741232219`-lenke
+- [x] **FOOT-03**: Åpningstider vises: Alle dager 13:00–23:00
+- [x] **FOOT-04**: Facebook-lenke til `facebook.com/NumNumPizzaGrill`
+- [x] **FOOT-05**: Tekst: "Langs Riksvei 287 – Parkering utenfor!"
+- [x] **FOOT-06**: Copyright-linje med restaurantens navn
 
 ### SEO & Meta
 
@@ -153,12 +153,12 @@
 | LEV-03 | Phase 3 | Pending |
 | LEV-04 | Phase 3 | Pending |
 | LEV-05 | Phase 3 | Pending |
-| FOOT-01 | Phase 3 | Pending |
-| FOOT-02 | Phase 3 | Pending |
-| FOOT-03 | Phase 3 | Pending |
-| FOOT-04 | Phase 3 | Pending |
-| FOOT-05 | Phase 3 | Pending |
-| FOOT-06 | Phase 3 | Pending |
+| FOOT-01 | Phase 3 | Complete |
+| FOOT-02 | Phase 3 | Complete |
+| FOOT-03 | Phase 3 | Complete |
+| FOOT-04 | Phase 3 | Complete |
+| FOOT-05 | Phase 3 | Complete |
+| FOOT-06 | Phase 3 | Complete |
 | SEO-01 | Phase 4 | Pending |
 | SEO-02 | Phase 4 | Pending |
 | SEO-03 | Phase 4 | Pending |
