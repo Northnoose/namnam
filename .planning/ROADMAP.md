@@ -29,7 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Logo renders without layout shift (no CLS in Lighthouse) and is sharp on retina displays
   4. `src/data/menu.ts` exists and exports typed `MenuCategory[]` covering all 5 categories with correct TypeScript types
   5. Site layout renders correctly at 320px, 768px, and 1280px viewport widths
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Fix layout.tsx FOUC + lang, replace navbar logo with next/image
+- [ ] 01-02-PLAN.md — Create src/data/menu.ts with TypeScript interfaces and 5-category stubs
+- [ ] 01-03-PLAN.md — Verify (and fix if needed) responsive layout at 320/768/1280px, human checkpoint
 
 ### Phase 2: Navigation Shell
 **Goal**: Users can navigate the full page from anywhere, and the phone number is always one tap away
@@ -72,7 +77,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/3 | Not started | - |
 | 2. Navigation Shell | 0/TBD | Not started | - |
 | 3. Content Sections | 0/TBD | Not started | - |
 | 4. SEO and Meta | 0/TBD | Not started | - |
