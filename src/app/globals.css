@@ -5,7 +5,11 @@
 
 
 @layer base {
-  html,
+  html {
+    scroll-padding-top: 80px;
+    scroll-behavior: smooth;
+    @apply dark:bg-trueGray-900;
+  }
   body {
     @apply dark:bg-trueGray-900;
   }
