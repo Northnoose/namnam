@@ -1,24 +1,30 @@
-import { Container } from "@/components/Container";
+import { Hero } from "@/components/Hero";
+import { OmOss } from "@/components/OmOss";
+import { Meny } from "@/components/Meny";
+import { Levering } from "@/components/Levering";
 
 export default function Home() {
   return (
-    <Container>
-      {/* Phase 2: anchor targets — real content added in Phase 3 */}
-      <section id="om-oss" className="min-h-[300px] flex items-center justify-center py-16">
-        <p className="text-gray-500 text-lg">Om oss — klar i Phase 3</p>
+    <>
+      {/* Hero renders its own section with full-viewport styling — no wrapper needed */}
+      <Hero />
+
+      {/* Om oss section — Navbar links to #om-oss */}
+      <section id="om-oss">
+        <OmOss />
       </section>
 
-      <section id="meny" className="min-h-[300px] flex items-center justify-center py-16">
-        <p className="text-gray-500 text-lg">Meny — klar i Phase 3</p>
+      {/* Meny section — Navbar links to #meny, Hero "SE MENYEN" button links here */}
+      <section id="meny">
+        <Meny />
       </section>
 
-      <section id="levering" className="min-h-[300px] flex items-center justify-center py-16">
-        <p className="text-gray-500 text-lg">Levering — klar i Phase 3</p>
+      {/* Levering section — Navbar links to #levering */}
+      <section id="levering">
+        <Levering />
       </section>
 
-      <section id="kontakt" className="min-h-[300px] flex items-center justify-center py-16">
-        <p className="text-gray-500 text-lg">Kontakt — klar i Phase 3</p>
-      </section>
-    </Container>
+      {/* Kontakt / Footer — rendered in layout.tsx with id="kontakt" on Footer root element */}
+    </>
   );
 }
