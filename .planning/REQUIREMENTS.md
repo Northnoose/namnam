@@ -9,10 +9,10 @@
 
 ### Foundation
 
-- [ ] **FOUND-01**: Siden bruker mørkt tema som standard uten synlig flash ved lasting (FOUC-fri)
-- [ ] **FOUND-02**: HTML har `lang="nb"` (norsk bokmål) for korrekt SEO og skjermleser-uttale
-- [ ] **FOUND-03**: Logo (`NamNamPizza&Grill.png`) vises med `next/image` med eksplisitte dimensjoner (ingen layout shift)
-- [ ] **FOUND-04**: Menu-data er definert i `src/data/menu.ts` med TypeScript-typer (`MenuItem`, `MenuCategory`)
+- [x] **FOUND-01**: Siden bruker mørkt tema som standard uten synlig flash ved lasting (FOUC-fri)
+- [x] **FOUND-02**: HTML har `lang="nb"` (norsk bokmål) for korrekt SEO og skjermleser-uttale
+- [x] **FOUND-03**: Logo (`NamNamPizza&Grill.png`) vises med `next/image` med eksplisitte dimensjoner (ingen layout shift)
+- [x] **FOUND-04**: Menu-data er definert i `src/data/menu.ts` med TypeScript-typer (`MenuItem`, `MenuCategory`)
 - [ ] **FOUND-05**: Siden er fullt responsiv og fungerer på mobil (320px+), nettbrett og desktop
 
 ### Navigation
@@ -114,10 +114,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 | Phase 1 | Pending |
-| FOUND-02 | Phase 1 | Pending |
-| FOUND-03 | Phase 1 | Pending |
-| FOUND-04 | Phase 1 | Pending |
+| FOUND-01 | Phase 1 | Complete |
+| FOUND-02 | Phase 1 | Complete |
+| FOUND-03 | Phase 1 | Complete |
+| FOUND-04 | Phase 1 | Complete |
 | FOUND-05 | Phase 1 | Pending |
 | NAV-01 | Phase 2 | Pending |
 | NAV-02 | Phase 2 | Pending |
