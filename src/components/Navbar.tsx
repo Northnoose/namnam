@@ -15,7 +15,7 @@ export const Navbar = () => {
 
   return (
     <div className="w-full">
-      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-1">
+      <nav className="container relative flex flex-wrap items-center justify-between px-4 py-4 lg:px-8 mx-auto lg:justify-between xl:px-1">
         {/* Logo  */}
         <Link href="/">
           <Image
