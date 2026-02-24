@@ -42,10 +42,10 @@
 
 ### Meny
 
-- [ ] **MENU-01**: Meny vises med tabs/faner for 5 kategorier: 🔥 Grill | 🍔 Hamburger | 🍕 Pizza | 👶 Barnemeny | 🥤 Drikke
-- [ ] **MENU-02**: Tab-navigasjon er tilgjengelig med tastatur og skjermleser (Headless UI Tab)
-- [ ] **MENU-03**: Tab-listen er horisontal scroll på smal mobil (ikke wrapping)
-- [ ] **MENU-04**: Hvert menypunkt vises som kort med navn, ingredienser og pris
+- [x] **MENU-01**: Meny vises med tabs/faner for 5 kategorier: 🔥 Grill | 🍔 Hamburger | 🍕 Pizza | 👶 Barnemeny | 🥤 Drikke
+- [x] **MENU-02**: Tab-navigasjon er tilgjengelig med tastatur og skjermleser (Headless UI Tab)
+- [x] **MENU-03**: Tab-listen er horisontal scroll på smal mobil (ikke wrapping)
+- [x] **MENU-04**: Hvert menypunkt vises som kort med navn, ingredienser og pris
 - [ ] **MENU-05**: **Grill**-kategori inneholder alle 11 retter med korrekte priser (fra BRIEF.md)
 - [ ] **MENU-06**: **Hamburger**-kategori viser vektklasser (100g/160g/250g/333g) som badges/pills med tilhørende priser
 - [ ] **MENU-07**: **Pizza**-kategori viser alle 20 pizzaer (inkl. calzone) med liten/stor pris side om side
@@ -53,8 +53,8 @@
 - [ ] **MENU-09**: **Drikke**-kategori viser stor drikke, liten drikke og kuli med priser
 - [ ] **MENU-10**: "Nam Nam spesial" (Grill) har spesiell fremhevet styling (featured/anbefalt-badge)
 - [ ] **MENU-11**: "Lag din egen pizza" (Pizza nr. 17) har spesiell fremhevet styling
-- [ ] **MENU-12**: Tilbudsbadge er synlig: "🎉 TILBUD! 2 store valgfri pizza + 1.5L brus = kun 450,-"
-- [ ] **MENU-13**: Menykort har hover-effekt (subtil animasjon/skygge)
+- [x] **MENU-12**: Tilbudsbadge er synlig: "🎉 TILBUD! 2 store valgfri pizza + 1.5L brus = kun 450,-"
+- [x] **MENU-13**: Menykort har hover-effekt (subtil animasjon/skygge)
 
 ### Levering
 
@@ -135,10 +135,10 @@
 | OM-03 | Phase 3 | Pending |
 | OM-04 | Phase 3 | Pending |
 | OM-05 | Phase 3 | Pending |
-| MENU-01 | Phase 3 | Pending |
-| MENU-02 | Phase 3 | Pending |
-| MENU-03 | Phase 3 | Pending |
-| MENU-04 | Phase 3 | Pending |
+| MENU-01 | Phase 3 | Complete |
+| MENU-02 | Phase 3 | Complete |
+| MENU-03 | Phase 3 | Complete |
+| MENU-04 | Phase 3 | Complete |
 | MENU-05 | Phase 3 | Pending |
 | MENU-06 | Phase 3 | Pending |
 | MENU-07 | Phase 3 | Pending |
@@ -146,8 +146,8 @@
 | MENU-09 | Phase 3 | Pending |
 | MENU-10 | Phase 3 | Pending |
 | MENU-11 | Phase 3 | Pending |
-| MENU-12 | Phase 3 | Pending |
-| MENU-13 | Phase 3 | Pending |
+| MENU-12 | Phase 3 | Complete |
+| MENU-13 | Phase 3 | Complete |
 | LEV-01 | Phase 3 | Pending |
 | LEV-02 | Phase 3 | Pending |
 | LEV-03 | Phase 3 | Pending |

@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-23)
 ## Current Position
 
 Phase: 3 of 4 (Content Sections) — IN PROGRESS
-Plan: 4 of 7 in current phase — COMPLETE
-Status: Phase 3 plan 04 complete — Footer/Kontakt section done (FOOT-01 through FOOT-06)
-Last activity: 2026-02-24 — Completed 03-04 (Footer rewrite with real Nam Nam contact info)
+Plan: 5 of 7 in current phase — COMPLETE
+Status: Phase 3 plan 05 complete — Meny section done (MENU-01 through MENU-13)
+Last activity: 2026-02-24 — Completed 03-05 (Meny tabbed component with Headless UI v2, type-discriminated cards)
 
-Progress: [███████░░░] 70%
+Progress: [████████░░] 75%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
+- Total plans completed: 7
 - Average duration: 4 min
-- Total execution time: 0.35 hours
+- Total execution time: 0.37 hours
 
 **By Phase:**
 
@@ -29,16 +29,17 @@ Progress: [███████░░░] 70%
 |-------|-------|-------|----------|
 | 01-foundation | 3 | 16 min | 5.3 min |
 | 02-navigation-shell | 3 | 3 min | 1 min |
-| 03-content-sections | 4 (so far) | 2 min | 0.5 min |
+| 03-content-sections | 5 (so far) | 7 min | 1.4 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-02 (1 min), 02-03 (<1 min — human verify), 03-04 (2 min)
+- Last 5 plans: 02-02 (1 min), 02-03 (<1 min — human verify), 03-04 (2 min), 03-05 (5 min)
 - Trend: -
 
 *Updated after each plan completion*
 | Phase 02-navigation-shell P02 | 1 | 2 tasks | 4 files |
 | Phase 02-navigation-shell P03 | 1 | 1 task (human verify) | 0 files |
 | Phase 03-content-sections P04 | 1 | 1 task | 1 file |
+| Phase 03-content-sections P05 | 5 | 1 task | 1 file |
 
 ## Accumulated Context
 
@@ -63,6 +64,9 @@ Recent decisions affecting current work:
 - [Phase 02-navigation-shell]: Navigation: scroll-padding-top: 80px on html + pb-16 lg:pb-0 on children wrapper for sticky navbar and call bar clearance [IMPLEMENTED 02-02]
 - [Phase 03-content-sections]: Footer: id="kontakt" on footer root element — Navbar #kontakt anchor scroll targets footer directly [IMPLEMENTED 03-04]
 - [Phase 03-content-sections]: Footer: Facebook URL uses facebook.com/NumNumPizzaGrill per BRIEF.md — TODO comment in code flags NamNam vs NumNum discrepancy for client verification [03-04]
+- [Phase 03-content-sections]: Meny: Offer banner rendered at section top AND inside Pizza TabPanel — always visible regardless of active tab [IMPLEMENTED 03-05]
+- [Phase 03-content-sections]: Meny: Tab className uses function form ({ selected }) => ... — confirmed valid via Headless UI v2 ClassNameOverride type [IMPLEMENTED 03-05]
+- [Phase 03-content-sections]: Meny: Calzone items are plain MenuItem (no priceLiten/priceStor) — isPizza() returns false, renders single-price card as designed [IMPLEMENTED 03-05]
 
 ### Pending Todos
 
@@ -77,5 +81,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 03-04-PLAN.md (Footer rewrite with real Nam Nam contact info — FOOT-01 through FOOT-06)
+Stopped at: Completed 03-05-PLAN.md (Meny tabbed component with Headless UI v2, type-discriminated cards — MENU-01 through MENU-13)
 Resume file: None
