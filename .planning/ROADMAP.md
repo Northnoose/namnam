@@ -82,7 +82,12 @@ Plans:
   2. Sharing the URL on social media renders a preview card with the correct title, description, and logo image
   3. Favicon displays in browser tab and as Apple touch icon on home screen saves
   4. Browser dev tools show a valid `<script type="application/ld+json">` block with `FastFoodRestaurant` type, address, telephone, and opening hours
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — Add metadata export (title, description, Open Graph) and JSON-LD script to layout.tsx
+- [ ] 04-02-PLAN.md — Create src/app/icon.tsx and apple-icon.tsx for file-based favicon generation
+- [ ] 04-03-PLAN.md — Human visual verification of all Phase 4 SEO requirements
 
 ## Progress
 
