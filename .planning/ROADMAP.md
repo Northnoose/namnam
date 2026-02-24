@@ -62,7 +62,16 @@ Plans:
   3. Menu section shows all 5 category tabs; switching tabs renders the correct items with names, ingredients, and prices; the special offer banner (450,-) is visible; Nav Nam spesial and Lag din egen pizza have featured styling; menu cards show a hover effect
   4. Levering section explains the delivery process with the 99,- surcharge, Vipps/kontant payment options, and a tappable phone number
   5. Footer shows address, tappable phone number, opening hours, Facebook link, and parking note
-**Plans**: TBD
+**Plans**: 7 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Populate src/data/menu.ts with all 5 category arrays from BRIEF.md
+- [ ] 03-02-PLAN.md — Rewrite Hero.tsx: logo, tagline, CTAs, motion fade-in animation
+- [ ] 03-03-PLAN.md — Create OmOss.tsx and Levering.tsx static server components
+- [ ] 03-04-PLAN.md — Rewrite Footer.tsx with real contact info and id="kontakt"
+- [ ] 03-05-PLAN.md — Create Meny.tsx: Headless UI tabs, type-discriminated cards, featured styling
+- [ ] 03-06-PLAN.md — Rewrite page.tsx to compose all sections, verify production build
+- [ ] 03-07-PLAN.md — Human visual verification of all Phase 3 sections at mobile and desktop
 
 ### Phase 4: SEO and Meta
 **Goal**: Search engines can correctly identify the business and the page is shareable with a proper preview
@@ -84,5 +93,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete | 2026-02-24 |
 | 2. Navigation Shell | 3/3 | Complete | 2026-02-24 |
-| 3. Content Sections | 0/TBD | Not started | - |
+| 3. Content Sections | 0/7 | Not started | - |
 | 4. SEO and Meta | 0/TBD | Not started | - |
