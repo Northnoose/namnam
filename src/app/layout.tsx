@@ -6,6 +6,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PopupWidget }  from "@/components/PopupWidget";
+import { CallBar } from "@/components/CallBar";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,8 +26,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <Navbar />
-          <div>{children}</div>
+          <div className="pb-16 lg:pb-0">{children}</div>
           <Footer />
+          <CallBar />
           <PopupWidget />
         </ThemeProvider>
       </body>
