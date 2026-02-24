@@ -1,22 +1,34 @@
 "use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { Disclosure, DisclosureButton, DisclosurePanel, CloseButton } from "@headlessui/react";
 import ThemeChanger from "./DarkSwitch";
-import Image from "next/image"
-import { Disclosure } from "@headlessui/react";
+
+const sections = [
+  { id: "om-oss",   label: "Om oss" },
+  { id: "meny",     label: "Meny" },
+  { id: "levering", label: "Levering" },
+  { id: "kontakt",  label: "Kontakt" },
+];
 
 export const Navbar = () => {
-  const navigation = [
-    "Product",
-    "Features",
-    "Pricing",
-    "Company",
-    "Blog",
-  ];
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="w-full">
-      <nav className="container relative flex flex-wrap items-center justify-between px-4 py-4 lg:px-8 mx-auto lg:justify-between xl:px-1">
-        {/* Logo  */}
+    <div
+      className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
+        scrolled ? "bg-neutral-900/95 backdrop-blur-sm shadow-md" : "bg-transparent"
+      }`}
+    >
+      <nav className="container relative flex flex-wrap items-center justify-between px-4 py-4 lg:px-8 mx-auto">
+        {/* Logo */}
         <Link href="/">
           <Image
             src="/img/NamNamPizza&Grill.png"
@@ -24,77 +36,83 @@ export const Navbar = () => {
             width={120}
             height={120}
             priority
-            className="w-[120px] h-auto"
+            className="w-[60px] h-auto lg:w-[80px]"
           />
         </Link>
 
-        {/* get started  */}
-        <div className="gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
-            <ThemeChanger />
-            <div className="hidden mr-3 lg:flex nav__item">
-              {/* TODO: Replace href with your CTA destination */}
-              <Link href="/" className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5">
-                [NAV_CTA_LABEL]
+        {/* Desktop links — hidden on mobile, visible on lg+ */}
+        <ul className="hidden lg:flex items-center gap-1">
+          {sections.map((s) => (
+            <li key={s.id}>
+              <Link
+                href={`#${s.id}`}
+                className="px-4 py-2 text-gray-200 hover:text-white rounded-md transition-colors duration-200"
+              >
+                {s.label}
               </Link>
-            </div>
+            </li>
+          ))}
+        </ul>
+
+        {/* Desktop right cluster: ThemeChanger + phone CTA — hidden on mobile */}
+        <div className="hidden lg:flex items-center gap-3">
+          <ThemeChanger />
+          <a
+            href="tel:+4741232219"
+            className="flex items-center gap-2 px-4 py-2 bg-orange-600 hover:bg-orange-500 text-white font-semibold rounded-md transition-colors duration-200"
+            aria-label="Ring oss: 41 23 22 19"
+          >
+            41 23 22 19
+          </a>
         </div>
 
-        <Disclosure>
-          {({ open }) => (
-            <>
-                <Disclosure.Button
+        {/* Mobile controls: ThemeChanger + hamburger — visible below lg */}
+        <div className="flex lg:hidden items-center gap-2">
+          <ThemeChanger />
+          <Disclosure>
+            {({ open }) => (
+              <>
+                <DisclosureButton
                   aria-label="Toggle Menu"
-                  className="px-2 py-1 text-gray-500 rounded-md lg:hidden hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700">
+                  className="px-2 py-1 text-gray-300 rounded-md hover:text-white focus:outline-none"
+                >
                   <svg
                     className="w-6 h-6 fill-current"
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24">
-                    {open && (
+                    viewBox="0 0 24 24"
+                  >
+                    {open ? (
                       <path
                         fillRule="evenodd"
                         clipRule="evenodd"
                         d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
                       />
-                    )}
-                    {!open && (
+                    ) : (
                       <path
                         fillRule="evenodd"
                         d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
                       />
                     )}
                   </svg>
-                </Disclosure.Button>
+                </DisclosureButton>
 
-                <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
-                  <>
-                    {navigation.map((item, index) => (
-                      <Link key={index} href="/" className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
-                          {item}
-                      </Link>
-                    ))}
-                    <Link href="/" className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5">
-                        [NAV_CTA_LABEL]
-                    </Link>
-                  </>
-                </Disclosure.Panel>
-            </>
-          )}
-        </Disclosure>
-
-        {/* menu  */}
-        <div className="hidden text-center lg:flex lg:items-center">
-          <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
-            {navigation.map((menu, index) => (
-              <li className="mr-3 nav__item" key={index}>
-                <Link href="/" className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
-                    {menu}
-                </Link>
-              </li>
-            ))}
-          </ul>
+                <DisclosurePanel className="flex flex-col w-full py-2 lg:hidden">
+                  {sections.map((s) => (
+                    <CloseButton
+                      key={s.id}
+                      as={Link}
+                      href={`#${s.id}`}
+                      className="w-full px-4 py-3 text-gray-300 hover:text-white rounded-md transition-colors duration-200"
+                    >
+                      {s.label}
+                    </CloseButton>
+                  ))}
+                </DisclosurePanel>
+              </>
+            )}
+          </Disclosure>
         </div>
-
       </nav>
     </div>
   );
-}
+};
