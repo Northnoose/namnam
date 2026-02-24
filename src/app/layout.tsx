@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { PopupWidget }  from "@/components/PopupWidget";
+import { PopupWidget } from "@/components/PopupWidget";
 import { CallBar } from "@/components/CallBar";
 
+import { Manrope, Sora } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const sans = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const display = Sora({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -61,14 +71,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nb" suppressHydrationWarning data-scroll-behavior="smooth">
+    <html
+      lang="nb"
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+      className="dark"
+    >
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <body className={inter.className}>
+      <body className={`${sans.variable} ${display.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <Navbar />
           <div className="pb-16 lg:pb-0">{children}</div>

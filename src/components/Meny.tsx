@@ -1,121 +1,152 @@
 "use client";
-import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/react";
+
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Container } from "@/components/Container";
 import { menuCategories } from "@/data/menu";
-import type { MenuItem, PizzaMenuItem, HamburgerMenuItem } from "@/data/menu";
+import type { MenuItem } from "@/data/menu";
+import { MenuCategoryNav } from "@/components/menu/MenuCategoryNav";
+import { MenuSection } from "./menu/MenuSection";
 
-// Type guards
-function isPizza(item: MenuItem): item is PizzaMenuItem {
-  return "priceLiten" in item && "priceStor" in item;
-}
-
-function isHamburger(item: MenuItem): item is HamburgerMenuItem {
-  return "variants" in item;
-}
-
-function MenuCard({ item }: { item: MenuItem }) {
-  const baseClasses =
-    "rounded-lg border p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.02] flex flex-col gap-2";
-  const featuredClasses = item.featured
-    ? "border-orange-500 ring-1 ring-orange-500 bg-neutral-800"
-    : "border-neutral-700 bg-neutral-800";
-
-  return (
-    <div className={`${baseClasses} ${featuredClasses}`}>
-      {item.featured && (
-        <span className="self-start text-xs bg-orange-600 text-white px-2 py-0.5 rounded-full font-medium">
-          Anbefalt
-        </span>
-      )}
-      <h3 className="text-white font-semibold text-base leading-snug">{item.name}</h3>
-      {item.description && (
-        <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
-      )}
-
-      {isPizza(item) ? (
-        // Pizza: liten/stor price side by side (MENU-07)
-        <div className="flex gap-4 mt-auto pt-2 text-sm">
-          <span className="text-gray-300">
-            Liten <span className="text-white font-semibold">{item.priceLiten},-</span>
-          </span>
-          <span className="text-gray-300">
-            Stor <span className="text-white font-semibold">{item.priceStor},-</span>
-          </span>
-        </div>
-      ) : isHamburger(item) ? (
-        // Hamburger: weight variant badges (MENU-06)
-        <div className="flex flex-wrap gap-2 mt-auto pt-2">
-          {item.variants.map((v) => (
-            <span
-              key={v.weight}
-              className="px-2 py-1 bg-neutral-700 rounded-full text-xs text-gray-200 border border-neutral-600"
-            >
-              {v.weight} — {v.price},-
-            </span>
-          ))}
-        </div>
-      ) : (
-        // Default: single price (MENU-04, MENU-08, MENU-09)
-        <p className="text-white font-semibold mt-auto pt-2">{item.price},-</p>
-      )}
-    </div>
-  );
-}
+const OFFER_TEXT = "TILBUD! 2 store valgfri pizza + 1.5L brus = kun 450,-";
 
 export function Meny() {
+  const categories = useMemo(() => menuCategories, []);
+  const navItems = useMemo(
+    () =>
+      categories.map((c) => ({
+        id: c.id,
+        name: c.name,
+        emoji: c.emoji,
+      })),
+    [categories]
+  );
+
+  const [activeId, setActiveId] = useState(categories[0]?.id ?? "");
+  const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
+
+  function scrollTo(id: string) {
+    const el = sectionRefs.current[id] ?? document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    setActiveId(id);
+  }
+
+  useEffect(() => {
+    // Track which section is in view so nav highlights correctly.
+    const els = categories
+      .map((c) => sectionRefs.current[c.id])
+      .filter(Boolean) as HTMLElement[];
+
+    if (els.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Pick the most visible intersecting section.
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort(
+            (a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0)
+          );
+        if (visible[0]?.target?.id) setActiveId(visible[0].target.id);
+      },
+      {
+        root: null,
+        // Start switching a bit after the header.
+        rootMargin: "-20% 0px -70% 0px",
+        threshold: [0.05, 0.15, 0.25],
+      }
+    );
+
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [categories]);
+
   return (
     <Container className="py-16">
-      <h2 className="text-3xl font-bold text-white mb-8 text-center lg:text-4xl">
-        Meny
-      </h2>
+      <div className="mx-auto max-w-6xl">
+        <h2 className="font-display text-3xl font-semibold tracking-tight text-white text-center lg:text-4xl">
+          Meny
+        </h2>
+        <p className="mt-3 text-center text-trueGray-400">
+          Du ringer — vi bringer. Ring{" "}
+          <span className="text-white font-semibold">41 23 22 19</span>
+        </p>
 
-      {/* MENU-12: Offer banner — shown above the tabs */}
-      <div className="mb-6 rounded-lg bg-orange-600/20 border border-orange-500/50 px-4 py-3 text-center">
-        <span className="text-orange-300 font-semibold text-sm lg:text-base">
-          TILBUD! 2 store valgfri pizza + 1.5L brus = kun 450,-
-        </span>
-      </div>
+        <div className="mt-8 rounded-2xl bg-brand-600/15 border border-brand-600/35 px-4 py-3 text-center">
+          <span className="text-brand-200 font-semibold text-sm lg:text-base">
+            {OFFER_TEXT}
+          </span>
+        </div>
 
-      {/* MENU-01, MENU-02, MENU-03: Accessible tab group with horizontal scroll */}
-      <TabGroup>
-        <TabList className="flex overflow-x-auto whitespace-nowrap gap-2 pb-3 mb-6 scrollbar-none">
-          {menuCategories.map((cat) => (
-            <Tab
-              key={cat.id}
-              className={({ selected }: { selected: boolean }) =>
-                `shrink-0 px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 ${
-                  selected
-                    ? "bg-orange-600 text-white"
-                    : "bg-neutral-800 text-gray-300 hover:bg-neutral-700 hover:text-white"
-                }`
-              }
-            >
-              {cat.emoji} {cat.name}
-            </Tab>
-          ))}
-        </TabList>
+        {/* Mobile sticky chips */}
+        <div className="mt-6 lg:hidden">
+          <MenuCategoryNav
+            items={navItems}
+            activeId={activeId}
+            onSelect={scrollTo}
+            variant="mobile"
+          />
+        </div>
 
-        <TabPanels>
-          {menuCategories.map((cat) => (
-            <TabPanel key={cat.id}>
-              {/* Pizza tab: show offer banner inside panel too (near items) */}
-              {cat.id === "pizza" && (
-                <div className="mb-4 rounded-lg bg-green-800/30 border border-green-600/40 px-4 py-2 text-center">
-                  <span className="text-green-300 text-sm font-medium">
-                    TILBUD! 2 store valgfri pizza + 1.5L brus = kun 450,-
-                  </span>
-                </div>
-              )}
-              {/* MENU-04, MENU-13: Card grid with hover effect */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {cat.items.map((item) => (
-                  <MenuCard key={item.id} item={item} />
-                ))}
+        <div className="mt-10 grid gap-10 lg:grid-cols-[280px,1fr] lg:gap-12">
+          {/* Desktop sidebar */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 rounded-3xl border border-trueGray-800 bg-trueGray-900/25 p-5">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-semibold text-white">Kategorier</h3>
+                <span className="text-xs text-trueGray-400">Skroll</span>
               </div>
-            </TabPanel>
-          ))}
-        </TabPanels>
-      </TabGroup>
+
+              <div className="mt-4">
+                <MenuCategoryNav
+                  items={navItems}
+                  activeId={activeId}
+                  onSelect={scrollTo}
+                  variant="desktop"
+                />
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-trueGray-800 bg-trueGray-900/35 p-4">
+                <div className="text-xs text-trueGray-400">Tilbud</div>
+                <div className="mt-1 text-sm text-white font-semibold">
+                  {OFFER_TEXT}
+                </div>
+              </div>
+
+              <a
+                href="tel:41232219"
+                className="mt-4 block rounded-2xl bg-brand-600 px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-brand-500"
+              >
+                Ring og bestill
+              </a>
+
+              <p className="mt-2 text-xs text-trueGray-400">
+                Levering innenfor Modum kommune.
+              </p>
+            </div>
+          </aside>
+
+          {/* Content (NO internal scroll, no overflow, no max-height) */}
+          <div className="min-h-0">
+            <div className="space-y-14">
+              {categories.map((cat) => (
+                <div
+                  key={cat.id}
+                  ref={(el) => {
+                    sectionRefs.current[cat.id] = el;
+                  }}
+                >
+                  <MenuSection
+                    id={cat.id}
+                    title={`${cat.emoji} ${cat.name}`}
+                    items={cat.items as unknown as MenuItem[]}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </Container>
   );
 }

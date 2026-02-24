@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
   html {
     scroll-padding-top: 80px;
@@ -15,3 +13,13 @@
   }
 }
 
+@layer utilities {
+  /* Hide scrollbars for horizontal category chips (still scrollable). */
+  .scrollbar-none {
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+}

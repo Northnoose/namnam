@@ -16,18 +16,30 @@ const config: Config = {
       colors: {
         // trueGray maps to Tailwind's neutral palette — used for dark mode backgrounds
         trueGray: colors.neutral,
-        // TODO: Add your brand colors here, e.g.:
-        // brand: {
-        //   50: "#eef2ff",   /* TODO: Change to your brand color */
-        //   500: "#6366f1",  /* TODO: Change to your brand color */
-        //   600: "#4f46e5",  /* TODO: Change to your brand color */
-        // },
+        // Warm, premium accent (less "construction orange", more restaurant amber)
+        brand: {
+          50: "#FFF7ED",
+          100: "#FFEDD5",
+          200: "#FED7AA",
+          300: "#FDBA74",
+          400: "#FB923C",
+          500: "#F97316",
+          600: "#EA580C",
+          700: "#C2410C",
+          800: "#9A3412",
+          900: "#7C2D12",
+        },
+      },
+      boxShadow: {
+        // Soft lift that feels premium on dark backgrounds
+        lift: "0 12px 30px rgba(0,0,0,.35)",
       },
     },
     fontFamily: {
       // TODO: Change "Inter" to your brand font (also update the import in src/app/layout.tsx)
       sans: ["Inter", ...defaultTheme.fontFamily.sans],
       stock: [defaultTheme.fontFamily.sans],
+      display: ["var(--font-display)", ...defaultTheme.fontFamily.sans],
     },
   },
   variants: {
