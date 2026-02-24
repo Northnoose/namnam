@@ -12,7 +12,7 @@ A single-page restaurant website built on an existing Next.js 14 + Tailwind CSS 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - Fix dark-theme flash, set Norwegian language, establish typed menu data structure
+- [x] **Phase 1: Foundation** - Fix dark-theme flash, set Norwegian language, establish typed menu data structure
 - [ ] **Phase 2: Navigation Shell** - Sticky navbar, sticky call bar, smooth scroll with correct anchor offsets
 - [ ] **Phase 3: Content Sections** - Hero, Om oss, Menu (5 categories), Levering, Footer — the full page
 - [ ] **Phase 4: SEO and Meta** - Title, description, Open Graph, favicon, LocalBusiness JSON-LD schema
@@ -32,9 +32,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Fix layout.tsx FOUC + lang, replace navbar logo with next/image
-- [ ] 01-02-PLAN.md — Create src/data/menu.ts with TypeScript interfaces and 5-category stubs
-- [ ] 01-03-PLAN.md — Verify (and fix if needed) responsive layout at 320/768/1280px, human checkpoint
+- [x] 01-01-PLAN.md — Fix layout.tsx FOUC + lang, replace navbar logo with next/image
+- [x] 01-02-PLAN.md — Create src/data/menu.ts with TypeScript interfaces and 5-category stubs
+- [x] 01-03-PLAN.md — Verify (and fix if needed) responsive layout at 320/768/1280px, human checkpoint
 
 ### Phase 2: Navigation Shell
 **Goal**: Users can navigate the full page from anywhere, and the phone number is always one tap away
@@ -77,7 +77,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 2/3 | In Progress|  |
+| 1. Foundation | 3/3 | Complete | 2026-02-24 |
 | 2. Navigation Shell | 0/TBD | Not started | - |
 | 3. Content Sections | 0/TBD | Not started | - |
 | 4. SEO and Meta | 0/TBD | Not started | - |

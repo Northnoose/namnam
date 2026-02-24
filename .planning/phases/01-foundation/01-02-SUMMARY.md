@@ -69,7 +69,7 @@ Each task was committed atomically:
 
 1. **Task 1: Create src/data/menu.ts with TypeScript interfaces and category stubs** - `621edb5` (feat)
 
-**Plan metadata:** _(to be added after docs commit)_
+**Plan metadata:** `d72203e` (docs: complete menu data model plan)
 
 ## Files Created/Modified
 - `src/data/menu.ts` - TypeScript interfaces (MenuItem, PizzaMenuItem, HamburgerVariant, HamburgerMenuItem, MenuCategory) and menuCategories export with 5 empty category stubs

@@ -13,7 +13,7 @@
 - [x] **FOUND-02**: HTML har `lang="nb"` (norsk bokmål) for korrekt SEO og skjermleser-uttale
 - [x] **FOUND-03**: Logo (`NamNamPizza&Grill.png`) vises med `next/image` med eksplisitte dimensjoner (ingen layout shift)
 - [x] **FOUND-04**: Menu-data er definert i `src/data/menu.ts` med TypeScript-typer (`MenuItem`, `MenuCategory`)
-- [ ] **FOUND-05**: Siden er fullt responsiv og fungerer på mobil (320px+), nettbrett og desktop
+- [x] **FOUND-05**: Siden er fullt responsiv og fungerer på mobil (320px+), nettbrett og desktop
 
 ### Navigation
 
