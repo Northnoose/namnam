@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-23)
 ## Current Position
 
 Phase: 3 of 4 (Content Sections) — IN PROGRESS
-Plan: 5 of 7 in current phase — COMPLETE
-Status: Phase 3 plan 05 complete — Meny section done (MENU-01 through MENU-13)
-Last activity: 2026-02-24 — Completed 03-05 (Meny tabbed component with Headless UI v2, type-discriminated cards)
+Plan: 6 of 7 in current phase — COMPLETE
+Status: Phase 3 plan 06 complete — page.tsx composed with all section components, production build verified
+Last activity: 2026-02-24 — Completed 03-06 (page.tsx rewritten with Hero, OmOss, Meny, Levering; production build confirmed)
 
-Progress: [████████░░] 75%
+Progress: [█████████░] 85%
 
 ## Performance Metrics
 
@@ -29,7 +29,7 @@ Progress: [████████░░] 75%
 |-------|-------|-------|----------|
 | 01-foundation | 3 | 16 min | 5.3 min |
 | 02-navigation-shell | 3 | 3 min | 1 min |
-| 03-content-sections | 5 (so far) | 7 min | 1.4 min |
+| 03-content-sections | 6 (so far) | 10 min | 1.7 min |
 
 **Recent Trend:**
 - Last 5 plans: 02-02 (1 min), 02-03 (<1 min — human verify), 03-04 (2 min), 03-05 (5 min)
@@ -40,6 +40,7 @@ Progress: [████████░░] 75%
 | Phase 02-navigation-shell P03 | 1 | 1 task (human verify) | 0 files |
 | Phase 03-content-sections P04 | 1 | 1 task | 1 file |
 | Phase 03-content-sections P05 | 5 | 1 task | 1 file |
+| Phase 03-content-sections P06 | 3 | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -67,6 +68,7 @@ Recent decisions affecting current work:
 - [Phase 03-content-sections]: Meny: Offer banner rendered at section top AND inside Pizza TabPanel — always visible regardless of active tab [IMPLEMENTED 03-05]
 - [Phase 03-content-sections]: Meny: Tab className uses function form ({ selected }) => ... — confirmed valid via Headless UI v2 ClassNameOverride type [IMPLEMENTED 03-05]
 - [Phase 03-content-sections]: Meny: Calzone items are plain MenuItem (no priceLiten/priceStor) — isPizza() returns false, renders single-price card as designed [IMPLEMENTED 03-05]
+- [Phase 03-content-sections]: Page composition: page.tsx uses React fragment with section ID wrappers, no Container; each component manages own layout
 
 ### Pending Todos
 
@@ -81,5 +83,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 03-05-PLAN.md (Meny tabbed component with Headless UI v2, type-discriminated cards — MENU-01 through MENU-13)
+Stopped at: Completed 03-06-PLAN.md (page.tsx composed with all section components — Hero, OmOss, Meny, Levering; production build verified)
 Resume file: None
