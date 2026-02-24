@@ -13,7 +13,7 @@ A single-page restaurant website built on an existing Next.js 14 + Tailwind CSS 
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Fix dark-theme flash, set Norwegian language, establish typed menu data structure
-- [ ] **Phase 2: Navigation Shell** - Sticky navbar, sticky call bar, smooth scroll with correct anchor offsets
+- [x] **Phase 2: Navigation Shell** - Sticky navbar, sticky call bar, smooth scroll with correct anchor offsets
 - [ ] **Phase 3: Content Sections** - Hero, Om oss, Menu (5 categories), Levering, Footer — the full page
 - [ ] **Phase 4: SEO and Meta** - Title, description, Open Graph, favicon, LocalBusiness JSON-LD schema
 
@@ -48,9 +48,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Rewrite Navbar.tsx: sticky, scroll-aware, Headless UI v2 API, four section links, desktop phone CTA, mobile auto-close menu (NAV-01, NAV-02, NAV-03)
-- [ ] 02-02-PLAN.md — Create CallBar.tsx, add scroll CSS to globals.css, data-scroll-behavior to layout.tsx, placeholder anchor sections in page.tsx (NAV-04, NAV-05)
-- [ ] 02-03-PLAN.md — Human visual verification of all Phase 2 navigation features across mobile and desktop (NAV-01 through NAV-05)
+- [x] 02-01-PLAN.md — Rewrite Navbar.tsx: sticky, scroll-aware, Headless UI v2 API, four section links, desktop phone CTA, mobile auto-close menu (NAV-01, NAV-02, NAV-03)
+- [x] 02-02-PLAN.md — Create CallBar.tsx, add scroll CSS to globals.css, data-scroll-behavior to layout.tsx, placeholder anchor sections in page.tsx (NAV-04, NAV-05)
+- [x] 02-03-PLAN.md — Human visual verification of all Phase 2 navigation features across mobile and desktop (NAV-01 through NAV-05)
 
 ### Phase 3: Content Sections
 **Goal**: Every piece of information a visitor needs to decide to order is visible on the page
@@ -83,6 +83,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete | 2026-02-24 |
-| 2. Navigation Shell | 2/3 | In Progress|  |
+| 2. Navigation Shell | 3/3 | Complete | 2026-02-24 |
 | 3. Content Sections | 0/TBD | Not started | - |
 | 4. SEO and Meta | 0/TBD | Not started | - |
