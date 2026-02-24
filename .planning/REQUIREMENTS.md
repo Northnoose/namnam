@@ -75,11 +75,11 @@
 
 ### SEO & Meta
 
-- [ ] **SEO-01**: `<title>` er: "Nam Nam Pizza & Grill – Pizza, Grill & Burger i Åmot | Utkjøring i Modum"
-- [ ] **SEO-02**: `<meta name="description">` beskriver restauranten på norsk
-- [ ] **SEO-03**: Open Graph-tags inkluderer tittel, beskrivelse og logo-bilde
+- [x] **SEO-01**: `<title>` er: "Nam Nam Pizza & Grill – Pizza, Grill & Burger i Åmot | Utkjøring i Modum"
+- [x] **SEO-02**: `<meta name="description">` beskriver restauranten på norsk
+- [x] **SEO-03**: Open Graph-tags inkluderer tittel, beskrivelse og logo-bilde
 - [x] **SEO-04**: Favicon er basert på logoen (32×32 + 180×180 Apple touch icon)
-- [ ] **SEO-05**: LocalBusiness JSON-LD schema er implementert med adresse, telefon, åpningstider og `FastFoodRestaurant` type
+- [x] **SEO-05**: LocalBusiness JSON-LD schema er implementert med adresse, telefon, åpningstider og `FastFoodRestaurant` type
 
 ---
 
@@ -159,11 +159,11 @@
 | FOOT-04 | Phase 3 | Complete |
 | FOOT-05 | Phase 3 | Complete |
 | FOOT-06 | Phase 3 | Complete |
-| SEO-01 | Phase 4 | Pending |
-| SEO-02 | Phase 4 | Pending |
-| SEO-03 | Phase 4 | Pending |
+| SEO-01 | Phase 4 | Complete |
+| SEO-02 | Phase 4 | Complete |
+| SEO-03 | Phase 4 | Complete |
 | SEO-04 | Phase 4 | Complete |
-| SEO-05 | Phase 4 | Pending |
+| SEO-05 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 47 total

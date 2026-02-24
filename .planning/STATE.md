@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-23)
 ## Current Position
 
 Phase: 3 of 4 (Content Sections) — COMPLETE ✓
-Phase: 4 of 4 (SEO & Meta) — IN PROGRESS (Plan 02 of 03 complete)
-Status: Phase 4 in progress — 04-02 favicon/apple-icon complete; 04-03 next
-Last activity: 2026-02-24 — 04-02 complete: favicon and Apple touch icon via ImageResponse
+Phase: 4 of 4 (SEO & Meta) — IN PROGRESS (Plans 01 and 02 of 03 complete)
+Status: Phase 4 in progress — 04-01 metadata/JSON-LD complete; 04-02 favicon complete; 04-03 next
+Last activity: 2026-02-24 — 04-01 complete: metadata export with title/description/openGraph + FastFoodRestaurant JSON-LD
 
 Progress: [██████████] 100% (Phase 3 complete; Phase 4 started)
 
@@ -41,7 +41,8 @@ Progress: [██████████] 100% (Phase 3 complete; Phase 4 start
 | Phase 03-content-sections P04 | 1 | 1 task | 1 file |
 | Phase 03-content-sections P05 | 5 | 1 task | 1 file |
 | Phase 03-content-sections P06 | 3 | 2 tasks | 1 files |
-| Phase 04-seo-and-meta P02 | 1 | 1 tasks | 2 files |
+| Phase 04-seo-and-meta P01 | 2 | 1 task | 1 file |
+| Phase 04-seo-and-meta P02 | 1 | 1 task | 2 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,8 @@ Recent decisions affecting current work:
 - [Phase 03-content-sections]: Meny: Tab className uses function form ({ selected }) => ... — confirmed valid via Headless UI v2 ClassNameOverride type [IMPLEMENTED 03-05]
 - [Phase 03-content-sections]: Meny: Calzone items are plain MenuItem (no priceLiten/priceStor) — isPizza() returns false, renders single-price card as designed [IMPLEMENTED 03-05]
 - [Phase 03-content-sections]: Page composition: page.tsx uses React fragment with section ID wrappers, no Container; each component manages own layout
+- [Phase 04-seo-and-meta]: metadataBase uses process.env.NEXT_PUBLIC_SITE_URL ?? 'https://namnam.no' — env var override before go-live, TODO comment in code [IMPLEMENTED 04-01]
+- [Phase 04-seo-and-meta]: JSON-LD FastFoodRestaurant placed inside <html> before <body> — clean server-side structured data injection [IMPLEMENTED 04-01]
 - [Phase 04-seo-and-meta]: Used absolute URL for ImageResponse image source — Satori fetches via HTTP, not filesystem
 
 ### Pending Todos
@@ -85,5 +88,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 04-02-PLAN.md — favicon and Apple touch icon created. Next: 04-03.
+Stopped at: Completed 04-01-PLAN.md — SEO metadata and JSON-LD structured data complete. Next: 04-03 (human verification).
 Resume file: None
