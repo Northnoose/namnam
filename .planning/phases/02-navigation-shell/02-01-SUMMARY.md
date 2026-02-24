@@ -70,7 +70,7 @@ Each task was committed atomically:
 
 1. **Task 1: Rewrite Navbar.tsx** - `9d2dd9a` (feat)
 
-**Plan metadata:** _(pending docs commit)_
+**Plan metadata:** `644b2c7` (docs)
 
 ## Files Created/Modified
 - `src/components/Navbar.tsx` - Sticky, scroll-aware navbar with Headless UI v2 mobile menu, section anchors, desktop phone CTA
@@ -94,6 +94,13 @@ None - no external service configuration required.
 - Navbar is complete and TypeScript-clean; ready for anchor targets to be added in Phase 3 content sections
 - `scroll-padding-top: 80px` and `data-scroll-behavior="smooth"` (NAV-05) are noted in the research but not in this plan — those belong in a later plan or Phase 3 content plan
 - Mobile call bar (NAV-04 mobile part) not yet implemented — separate plan or Phase 3
+
+## Self-Check: PASSED
+
+- FOUND: src/components/Navbar.tsx
+- FOUND: 02-01-SUMMARY.md
+- FOUND: commit 9d2dd9a (feat: Navbar rewrite)
+- FOUND: commit 644b2c7 (docs: plan metadata)
 
 ---
 *Phase: 02-navigation-shell*
