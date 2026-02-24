@@ -18,20 +18,14 @@ export const Navbar = () => {
       <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-1">
         {/* Logo  */}
         <Link href="/">
-          <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
-              <span>
-                {/* TODO: Replace with your logo image */}
-                <Image
-                  src="/img/logo.svg"
-                  width="32"
-                  alt="Logo"
-                  height="32"
-                  className="w-8"
-                />
-              </span>
-            {/* TODO: Replace [COMPANY_NAME] with your company name */}
-            <span>[COMPANY_NAME]</span>
-          </span>
+          <Image
+            src="/img/NamNamPizza&Grill.png"
+            alt="Nam Nam Pizza & Grill"
+            width={120}
+            height={120}
+            priority
+            className="w-[120px] h-auto"
+          />
         </Link>
 
         {/* get started  */}
