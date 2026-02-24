@@ -35,6 +35,7 @@ Progress: [████░░░░░░] 40%
 - Trend: -
 
 *Updated after each plan completion*
+| Phase 02-navigation-shell P02 | 1 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -55,6 +56,8 @@ Recent decisions affecting current work:
 - Navigation: Desktop phone CTA integrated into navbar right cluster (not separate fixed bar) — simpler, satisfies NAV-04 since navbar is sticky [IMPLEMENTED 02-01]
 - Navigation: Headless UI v2 CloseButton as={Link} pattern for mobile menu auto-close — no manual onClick handler [IMPLEMENTED 02-01]
 - Stack: Add `motion` library for hero animation only — no other animation library additions
+- [Phase 02-navigation-shell]: Navigation: CallBar uses lg:hidden — mobile sticky call bar, desktop CTA stays in navbar [IMPLEMENTED 02-02]
+- [Phase 02-navigation-shell]: Navigation: scroll-padding-top: 80px on html + pb-16 lg:pb-0 on children wrapper for sticky navbar and call bar clearance [IMPLEMENTED 02-02]
 
 ### Pending Todos
 

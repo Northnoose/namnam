@@ -20,8 +20,8 @@
 - [x] **NAV-01**: Navbar viser logo og navigasjonslenker til alle seksjoner (Om oss, Meny, Levering, Kontakt)
 - [x] **NAV-02**: Navbar er sticky øverst på desktop med transparent-til-solid bakgrunn ved scroll
 - [x] **NAV-03**: Mobilmeny (hamburger) åpner/lukker med alle seksjonslenker
-- [ ] **NAV-04**: Sticky ring-bar vises alltid i bunnen (mobil) / toppen (desktop) med klikkbar `tel:+4741232219`-lenke
-- [ ] **NAV-05**: Ankernavigasjon scroller smooth til riktig seksjon uten at innhold skjules bak sticky elementer
+- [x] **NAV-04**: Sticky ring-bar vises alltid i bunnen (mobil) / toppen (desktop) med klikkbar `tel:+4741232219`-lenke
+- [x] **NAV-05**: Ankernavigasjon scroller smooth til riktig seksjon uten at innhold skjules bak sticky elementer
 
 ### Hero
 
@@ -122,8 +122,8 @@
 | NAV-01 | Phase 2 | Complete |
 | NAV-02 | Phase 2 | Complete |
 | NAV-03 | Phase 2 | Complete |
-| NAV-04 | Phase 2 | Pending |
-| NAV-05 | Phase 2 | Pending |
+| NAV-04 | Phase 2 | Complete |
+| NAV-05 | Phase 2 | Complete |
 | HERO-01 | Phase 3 | Pending |
 | HERO-02 | Phase 3 | Pending |
 | HERO-03 | Phase 3 | Pending |
