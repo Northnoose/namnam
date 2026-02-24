@@ -45,7 +45,12 @@ Plans:
   2. On mobile, tapping the hamburger icon opens a menu with links to all four sections; tapping a link closes the menu and scrolls to the section
   3. The sticky call bar is visible at the bottom of the screen on mobile and top on desktop at all scroll positions, and tapping it initiates a phone call to 41 23 22 19
   4. Navbar background transitions from transparent to solid as the user scrolls down
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Rewrite Navbar.tsx: sticky, scroll-aware, Headless UI v2 API, four section links, desktop phone CTA, mobile auto-close menu (NAV-01, NAV-02, NAV-03)
+- [ ] 02-02-PLAN.md — Create CallBar.tsx, add scroll CSS to globals.css, data-scroll-behavior to layout.tsx, placeholder anchor sections in page.tsx (NAV-04, NAV-05)
+- [ ] 02-03-PLAN.md — Human visual verification of all Phase 2 navigation features across mobile and desktop (NAV-01 through NAV-05)
 
 ### Phase 3: Content Sections
 **Goal**: Every piece of information a visitor needs to decide to order is visible on the page
@@ -78,6 +83,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete | 2026-02-24 |
-| 2. Navigation Shell | 0/TBD | Not started | - |
+| 2. Navigation Shell | 0/3 | Not started | - |
 | 3. Content Sections | 0/TBD | Not started | - |
 | 4. SEO and Meta | 0/TBD | Not started | - |
