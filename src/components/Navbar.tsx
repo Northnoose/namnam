@@ -2,14 +2,19 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Disclosure, DisclosureButton, DisclosurePanel, CloseButton } from "@headlessui/react";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  CloseButton,
+} from "@headlessui/react";
 import ThemeChanger from "./DarkSwitch";
 
 const sections = [
-  { id: "om-oss",   label: "Om oss" },
-  { id: "meny",     label: "Meny" },
+  { id: "om-oss", label: "Om oss" },
+  { id: "meny", label: "Meny" },
   { id: "levering", label: "Levering" },
-  { id: "kontakt",  label: "Kontakt" },
+  { id: "kontakt", label: "Kontakt" },
 ];
 
 export const Navbar = () => {
@@ -24,29 +29,32 @@ export const Navbar = () => {
   return (
     <div
       className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
-        scrolled ? "bg-neutral-900/95 backdrop-blur-sm shadow-md" : "bg-transparent"
+        scrolled
+          ? "bg-trueGray-900/92 backdrop-blur-md shadow-md"
+          : "bg-transparent"
       }`}
     >
-      <nav className="container relative flex flex-wrap items-center justify-between px-4 py-4 lg:px-8 mx-auto">
+      <nav className="container relative mx-auto flex flex-wrap items-center justify-between px-4 py-4 lg:px-8">
         {/* Logo */}
-        <Link href="/">
+        <Link href="/" aria-label="Gå til forsiden" className="shrink-0">
           <Image
             src="/img/NamNamPizza&Grill.png"
             alt="Nam Nam Pizza & Grill"
             width={120}
             height={120}
-            priority
-            className="w-[60px] h-auto lg:w-[80px]"
+            // IMPORTANT: do NOT set priority here (reserve for Hero/LCP)
+            sizes="(min-width: 1024px) 80px, 60px"
+            className="h-auto w-[60px] lg:w-[80px]"
           />
         </Link>
 
         {/* Desktop links — hidden on mobile, visible on lg+ */}
-        <ul className="hidden lg:flex items-center gap-1">
+        <ul className="hidden items-center gap-1 lg:flex">
           {sections.map((s) => (
             <li key={s.id}>
               <Link
                 href={`#${s.id}`}
-                className="px-4 py-2 text-gray-200 hover:text-white rounded-md transition-colors duration-200"
+                className="rounded-xl px-4 py-2 text-trueGray-200 hover:text-white hover:bg-trueGray-800/50 transition-colors duration-200"
               >
                 {s.label}
               </Link>
@@ -54,30 +62,30 @@ export const Navbar = () => {
           ))}
         </ul>
 
-        {/* Desktop right cluster: ThemeChanger + phone CTA — hidden on mobile */}
-        <div className="hidden lg:flex items-center gap-3">
+        {/* Desktop right cluster */}
+        <div className="hidden items-center gap-3 lg:flex">
           <ThemeChanger />
           <a
             href="tel:+4741232219"
-            className="flex items-center gap-2 px-4 py-2 bg-orange-600 hover:bg-orange-500 text-white font-semibold rounded-md transition-colors duration-200"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-brand-600 px-4 py-2.5 text-white font-semibold shadow-lift hover:bg-brand-500 transition-colors duration-200 border border-brand-500/40"
             aria-label="Ring oss: 41 23 22 19"
           >
             41 23 22 19
           </a>
         </div>
 
-        {/* Mobile controls: ThemeChanger + hamburger — visible below lg */}
-        <div className="flex lg:hidden items-center gap-2">
+        {/* Mobile controls */}
+        <div className="flex items-center gap-2 lg:hidden">
           <ThemeChanger />
           <Disclosure>
             {({ open }) => (
               <>
                 <DisclosureButton
                   aria-label="Toggle Menu"
-                  className="px-2 py-1 text-gray-300 rounded-md hover:text-white focus:outline-none"
+                  className="rounded-xl px-2 py-1 text-trueGray-300 hover:text-white hover:bg-trueGray-800/50 focus:outline-none transition-colors"
                 >
                   <svg
-                    className="w-6 h-6 fill-current"
+                    className="h-6 w-6 fill-current"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                   >
@@ -96,13 +104,13 @@ export const Navbar = () => {
                   </svg>
                 </DisclosureButton>
 
-                <DisclosurePanel className="flex flex-col w-full py-2 lg:hidden">
+                <DisclosurePanel className="flex w-full flex-col py-2 lg:hidden">
                   {sections.map((s) => (
                     <CloseButton
                       key={s.id}
                       as={Link}
                       href={`#${s.id}`}
-                      className="w-full px-4 py-3 text-gray-300 hover:text-white rounded-md transition-colors duration-200"
+                      className="w-full rounded-xl px-4 py-3 text-trueGray-300 hover:text-white hover:bg-trueGray-800/50 transition-colors duration-200"
                     >
                       {s.label}
                     </CloseButton>

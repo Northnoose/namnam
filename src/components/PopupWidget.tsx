@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import {
@@ -25,7 +26,10 @@ export function PopupWidget() {
   const userName = useWatch({ control, name: "name", defaultValue: "Someone" });
 
   // TODO: Replace [COMPANY_NAME] in the subject/from_name hidden fields below
-  const onSubmit = async (data: Record<string, unknown>, e?: React.BaseSyntheticEvent) => {
+  const onSubmit = async (
+    data: Record<string, unknown>,
+    e?: React.BaseSyntheticEvent
+  ) => {
     console.log(data);
     await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -36,11 +40,10 @@ export function PopupWidget() {
       body: JSON.stringify(data, null, 2),
     })
       .then(async (response) => {
-        let json = await response.json();
+        const json = await response.json();
         if (json.success) {
           setIsSuccess(true);
           setMessage(json.message);
-          (e?.target as HTMLFormElement | undefined)?.reset();
           reset();
         } else {
           setIsSuccess(false);
@@ -59,8 +62,10 @@ export function PopupWidget() {
       <Disclosure>
         {({ open }) => (
           <>
-            <DisclosureButton className="fixed z-40 flex items-center justify-center transition duration-300 bg-indigo-500 rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 ease">
+            <DisclosureButton className="fixed z-40 flex items-center justify-center transition duration-200 bg-brand-600 rounded-full shadow-lift right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-brand-500 ease border border-brand-500/40">
               <span className="sr-only">Open Contact form Widget</span>
+
+              {/* Open icon */}
               <Transition
                 show={!open}
                 enter="transition duration-200 transform ease"
@@ -80,10 +85,11 @@ export function PopupWidget() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
               </Transition>
 
+              {/* Close icon */}
               <Transition
                 show={open}
                 enter="transition duration-200 transform ease"
@@ -105,28 +111,34 @@ export function PopupWidget() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
               </Transition>
             </DisclosureButton>
+
+            {/* Scroll-safe overlay:
+                - show={open}: prevents invisible fixed overlay trapping scroll
+                - pointer-events-none on wrapper: wrapper can't steal scroll/click
+                - pointer-events-auto on panel: only the panel captures input/scroll
+            */}
             <Transition
-              className="fixed  z-50 bottom-[100px] top-0 right-0  left-0 sm:top-auto sm:right-5 sm:left-auto"
+              show={open}
+              className="fixed z-50 inset-0 sm:inset-auto sm:bottom-[100px] sm:right-5 pointer-events-none"
               enter="transition duration-200 transform ease"
               enterFrom="opacity-0 translate-y-5"
               leave="transition duration-200 transform ease"
               leaveTo="opacity-0 translate-y-5"
               as="div"
             >
-              <DisclosurePanel className=" flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-gray-300 dark:border-gray-800 bg-white shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]">
-                <div className="flex flex-col items-center justify-center h-32 p-5 bg-indigo-600">
+              <DisclosurePanel className="pointer-events-auto flex flex-col overflow-hidden h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-trueGray-800 bg-trueGray-950 shadow-2xl rounded-2xl sm:max-h-[calc(100vh-120px)]">
+                <div className="flex flex-col items-center justify-center h-32 p-5 bg-brand-600">
                   {/* TODO: Replace with your popup headline and subheadline */}
                   <h3 className="text-lg text-white">[POPUP_HEADLINE]</h3>
-                  <p className="text-white opacity-50">
-                    [POPUP_SUBHEADLINE]
-                  </p>
+                  <p className="text-white opacity-50">[POPUP_SUBHEADLINE]</p>
                 </div>
-                <div className="flex-grow h-full p-6 overflow-auto bg-gray-50 ">
+
+                <div className="flex-grow h-full p-6 overflow-auto bg-trueGray-950">
                   {!isSubmitSuccessful && (
                     <form onSubmit={handleSubmit(onSubmit)} noValidate>
                       {/* TODO: Replace YOUR_ACCESS_KEY_HERE with your Web3Forms API key from https://web3forms.com */}
@@ -150,12 +162,13 @@ export function PopupWidget() {
                         className="hidden"
                         style={{ display: "none" }}
                         {...register("botcheck")}
-                      ></input>
+                      />
 
+                      {/* Name */}
                       <div className="mb-4">
                         <label
                           htmlFor="full_name"
-                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                          className="block mb-2 text-sm text-trueGray-300"
                         >
                           Full Name
                         </label>
@@ -167,10 +180,10 @@ export function PopupWidget() {
                             required: "Full name is required",
                             maxLength: 80,
                           })}
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
+                          className={`w-full px-3 py-2 text-white placeholder-trueGray-500 bg-trueGray-900/40 border border-trueGray-800 rounded-2xl focus:outline-none focus:ring ${
                             errors.name
                               ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                              : "border-trueGray-700 focus:border-brand-500 ring-brand-600/20"
                           }`}
                         />
                         {errors.name && (
@@ -180,10 +193,11 @@ export function PopupWidget() {
                         )}
                       </div>
 
+                      {/* Email */}
                       <div className="mb-4">
                         <label
                           htmlFor="email"
-                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                          className="block mb-2 text-sm text-trueGray-300"
                         >
                           Email Address
                         </label>
@@ -198,10 +212,10 @@ export function PopupWidget() {
                             },
                           })}
                           placeholder="you@company.com"
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
+                          className={`w-full px-3 py-2 text-white placeholder-trueGray-500 bg-trueGray-900/40 border border-trueGray-800 rounded-2xl focus:outline-none focus:ring ${
                             errors.email
                               ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                              : "border-trueGray-700 focus:border-brand-500 ring-brand-600/20"
                           }`}
                         />
 
@@ -212,10 +226,11 @@ export function PopupWidget() {
                         )}
                       </div>
 
+                      {/* Message */}
                       <div className="mb-4">
                         <label
                           htmlFor="message"
-                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                          className="block mb-2 text-sm text-trueGray-300"
                         >
                           Your Message
                         </label>
@@ -227,23 +242,25 @@ export function PopupWidget() {
                             required: "Enter your Message",
                           })}
                           placeholder="Your Message"
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring   ${
+                          className={`w-full px-3 py-2 text-white placeholder-trueGray-500 bg-trueGray-900/40 border border-trueGray-800 rounded-2xl h-28 focus:outline-none focus:ring ${
                             errors.message
                               ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                              : "border-trueGray-700 focus:border-brand-500 ring-brand-600/20"
                           }`}
                           required
-                        ></textarea>
+                        />
                         {errors.message && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
                             {errors.message.message as string}
                           </div>
                         )}
                       </div>
+
+                      {/* Submit */}
                       <div className="mb-3">
                         <button
                           type="submit"
-                          className="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none"
+                          className="w-full px-3 py-4 text-white bg-brand-600 rounded-2xl hover:bg-brand-500 transition-colors focus:outline-none border border-brand-500/40"
                         >
                           {isSubmitting ? (
                             <svg
@@ -259,27 +276,28 @@ export function PopupWidget() {
                                 r="10"
                                 stroke="currentColor"
                                 strokeWidth="4"
-                              ></circle>
+                              />
                               <path
                                 className="opacity-75"
                                 fill="currentColor"
                                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                              ></path>
+                              />
                             </svg>
                           ) : (
                             "Send Message"
                           )}
                         </button>
                       </div>
+
                       <p
-                        className="text-xs text-center text-gray-400"
+                        className="text-xs text-center text-trueGray-500"
                         id="result"
                       >
                         <span>
                           Powered by{" "}
                           <a
                             href="https://Web3Forms.com"
-                            className="text-gray-600"
+                            className="text-white underline decoration-brand-500/60 underline-offset-4 hover:decoration-brand-400"
                             target="_blank"
                             rel="noopener noreferrer"
                           >
@@ -290,8 +308,9 @@ export function PopupWidget() {
                     </form>
                   )}
 
+                  {/* Success */}
                   {isSubmitSuccessful && isSuccess && (
-                    <div className="flex flex-col items-center justify-center h-full text-center text-white rounded-md">
+                    <div className="flex flex-col items-center justify-center h-full text-center text-white rounded-2xl">
                       <svg
                         width="60"
                         height="60"
@@ -309,9 +328,9 @@ export function PopupWidget() {
                       <h3 className="py-5 text-xl text-green-500">
                         Message sent successfully
                       </h3>
-                      <p className="text-gray-700 md:px-3">{Message}</p>
+                      <p className="text-trueGray-300 md:px-3">{Message}</p>
                       <button
-                        className="mt-6 text-indigo-600 focus:outline-none"
+                        className="mt-6 text-white underline decoration-brand-500/60 underline-offset-4 hover:decoration-brand-400 focus:outline-none"
                         onClick={() => reset()}
                       >
                         Go back
@@ -319,8 +338,9 @@ export function PopupWidget() {
                     </div>
                   )}
 
+                  {/* Error */}
                   {isSubmitSuccessful && !isSuccess && (
-                    <div className="flex flex-col items-center justify-center h-full text-center text-white rounded-md">
+                    <div className="flex flex-col items-center justify-center h-full text-center text-white rounded-2xl">
                       <svg
                         width="60"
                         height="60"
@@ -339,9 +359,9 @@ export function PopupWidget() {
                       <h3 className="text-xl text-red-400 py-7">
                         Oops, Something went wrong!
                       </h3>
-                      <p className="text-gray-700 md:px-3">{Message}</p>
+                      <p className="text-trueGray-300 md:px-3">{Message}</p>
                       <button
-                        className="mt-6 text-indigo-600 focus:outline-none"
+                        className="mt-6 text-white underline decoration-brand-500/60 underline-offset-4 hover:decoration-brand-400 focus:outline-none"
                         onClick={() => reset()}
                       >
                         Go back

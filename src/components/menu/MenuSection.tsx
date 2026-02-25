@@ -1,7 +1,6 @@
 import React from "react";
 import type { MenuItem } from "@/data/menu";
-import { MenuItemCard } from "@/components/menu/MenuItemCard";
-import { MenuItemRow } from "@/components/menu/MenuItemRow";
+import { DishCard } from "@/components/menu/DishCard";
 
 export function MenuSection({
   id,
@@ -17,7 +16,7 @@ export function MenuSection({
   const featured = items.filter((i) => i.featured);
   const rest = items.filter((i) => !i.featured);
 
-  // If category has 0 featured items, we still keep rhythm.
+  // Keep rhythm: show max 2 featured cards.
   const featuredToShow = featured.slice(0, 2);
 
   return (
@@ -34,16 +33,17 @@ export function MenuSection({
       </div>
 
       {featuredToShow.length > 0 && (
-        <div className="mt-6 grid gap-6">
+        <div className="mt-6 grid gap-6 lg:grid-cols-2">
           {featuredToShow.map((item) => (
-            <MenuItemCard key={item.id} item={item} />
+            <DishCard key={item.id} item={item} variant="featured" />
           ))}
         </div>
       )}
 
-      <div className="mt-6 grid gap-4">
+      {/* Mobile-first grid of dish cards (no more row list). */}
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {rest.map((item) => (
-          <MenuItemRow key={item.id} item={item} />
+          <DishCard key={item.id} item={item} variant="grid" />
         ))}
       </div>
     </section>

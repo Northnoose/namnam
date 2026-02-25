@@ -4,9 +4,9 @@ import { motion } from "motion/react";
 
 export const Hero = () => {
   return (
-    <section className="relative flex items-center justify-center min-h-[calc(100vh-80px)] bg-neutral-950 overflow-hidden px-4 py-16">
-      <div className="flex flex-col items-center text-center max-w-2xl mx-auto gap-6">
-        {/* Logo — HERO-01 */}
+    <section className="relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden bg-trueGray-950 px-4 py-16">
+      <div className="mx-auto flex max-w-2xl flex-col items-center gap-6 text-center">
+        {/* Logo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -18,41 +18,44 @@ export const Hero = () => {
             width={280}
             height={280}
             priority
-            className="w-[180px] h-auto lg:w-[280px]"
+            sizes="(min-width: 1024px) 280px, 180px"
+            quality={80}
+            className="h-auto w-[180px] lg:w-[280px]"
           />
         </motion.div>
 
-        {/* Tagline + subtext — HERO-02, HERO-03 */}
+        {/* Tagline + subtext */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           className="flex flex-col gap-3"
         >
-          <h1 className="text-2xl font-bold text-white lg:text-4xl leading-tight">
+          <h1 className="text-2xl font-bold leading-tight text-white lg:text-4xl">
             Gatekjøkkenet i Åmot – Fastfood som du ønsker, når du ønsker!
           </h1>
-          <p className="text-lg text-gray-300 lg:text-xl">
-            Du ringer – Vi bringer! 📞 41 23 22 19
+          <p className="text-lg text-trueGray-300 lg:text-xl">
+            Du ringer – Vi bringer! 📞{" "}
+            <span className="text-white font-semibold">41 23 22 19</span>
           </p>
         </motion.div>
 
-        {/* CTA buttons — HERO-04, HERO-05 */}
+        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row gap-4 items-center"
+          className="flex flex-col items-center gap-4 sm:flex-row"
         >
           <a
             href="tel:+4741232219"
-            className="px-8 py-4 bg-orange-600 hover:bg-orange-500 text-white font-bold text-lg rounded-md transition-colors duration-200 w-full sm:w-auto text-center"
+            className="w-full rounded-2xl bg-brand-600 px-8 py-4 text-center text-lg font-bold text-white shadow-lift hover:bg-brand-500 transition-colors duration-200 border border-brand-500/40 sm:w-auto"
           >
             RING OG BESTILL
           </a>
           <a
             href="#meny"
-            className="px-8 py-4 bg-neutral-800 hover:bg-neutral-700 text-white font-semibold text-lg rounded-md transition-colors duration-200 w-full sm:w-auto text-center border border-neutral-700"
+            className="w-full rounded-2xl border border-trueGray-700 bg-trueGray-900/40 px-8 py-4 text-center text-lg font-semibold text-white hover:bg-trueGray-800/50 transition-colors duration-200 sm:w-auto"
           >
             SE MENYEN
           </a>

@@ -6,10 +6,13 @@
   html {
     scroll-padding-top: 80px;
     scroll-behavior: smooth;
-    @apply dark:bg-trueGray-900;
+    /* Make the document the scroll root */
+    @apply overflow-x-hidden dark:bg-trueGray-900;
   }
+
   body {
-    @apply dark:bg-trueGray-900;
+    /* Guarantee vertical scroll stays on the document (prevents nested scroll traps) */
+    @apply min-h-screen overflow-y-auto overflow-x-hidden dark:bg-trueGray-900;
   }
 }
 

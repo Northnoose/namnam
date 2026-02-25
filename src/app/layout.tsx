@@ -83,7 +83,9 @@ export default function RootLayout({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <body className={`${sans.variable} ${display.variable} font-sans`}>
+      <body
+        className={`${sans.variable} ${display.variable} font-sans min-h-screen overflow-y-auto overflow-x-hidden`}
+      >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <Navbar />
           <div className="pb-16 lg:pb-0">{children}</div>

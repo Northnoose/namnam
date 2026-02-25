@@ -15,7 +15,7 @@ export function PriceTag({
     return (
       <div className="flex items-baseline gap-3">
         {isDual ? (
-          <div className="flex items-baseline gap-3 text-sm">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm">
             <span className="text-trueGray-400">Liten</span>
             <span className="text-white font-semibold">{price.liten},-</span>
             <span className="text-trueGray-400">Stor</span>
@@ -38,7 +38,7 @@ export function PriceTag({
           <div className="text-white font-semibold">{price.stor},-</div>
         </div>
       ) : (
-        <div className="rounded-full border border-trueGray-700 bg-trueGray-900/40 px-3 py-1 text-white font-semibold">
+        <div className="rounded-2xl border border-brand-600/35 bg-brand-600/10 px-3 py-1 text-white font-semibold">
           {price},-
         </div>
       )}
